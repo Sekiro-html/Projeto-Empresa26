@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar-superior {
+    width: 100%;
+    height: 80px;
+    background-color: gray;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+#Hamburger {
+    width: 48px;
+    height: 48px;
+    margin-left: 20px;
+    align-self: center;
+    float: left;
+}
+
+.txt {
+    font-size: x-large;
+    font-family: sans-serif;
+}
+
+#txt-painel {
+    float: left;
+    align-self: center;
+    margin-left: 70px;
+}
+
+#txt-user {
+    float: left;
+    align-self: center;
+    margin-left: 20px;
+    font-size: x-large;
+    font-family: sans-serif;
+}
+
+#searchbar {
+    align-self: center;
+    width: 50%;
+    height: 50px;
+    margin-left: 50px;
+}
+
+#navbar-links {
+    width: 15%;
+    height: 505px;
+    max-height: 605px;
+    background-color: darkblue;
+    float: left;
+    display: block;
+    text-decoration: none;
+}
+
+.list {
+    list-style: none;   
+}
+
+.links {
+    width: 70%;
+    height: 40px;
+    background-color: blue;
+    margin-bottom: 20px;
+    margin-left: 28px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.anchor {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    width: 85%;
+    height: 505px;
+    float: left;
+    background-color: aqua;
+}
+
+#div-txt {
+    width: 80%;
+    height: 100px;
+    margin-top: 25px;
+    margin-left: 35px;
+}
+
+#titulo-dashboard {
+    margin-bottom: 8px;
+}
+
+.ContainerResultados {
+    width: 30%;
+    height: 150px;
+    background-color: darkgray;
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 25px;
+    border-radius: 25px;
+}
