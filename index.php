@@ -1,7 +1,3 @@
-<?php 
-    include 'conexao.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?php
+        include 'componentes/header.php';
+    ?>
 </body>
 </html>
