@@ -17,7 +17,7 @@
             <div id="navbar-superior">
                 <img src="IMG/hamburger.png" id="Hamburger" alt="">
                 <span id="txt-painel" class="txt">Painel da Empresa</span>
-                <input type="search" placeholder="Pesquisar" name="" id="searchbar">
+                <input type="search" placeholder="Pesquisar" name="" class="searchbar">
                 <span id="txt-user">Admin</span>
                 <img src="IMG/user.png" id="imguser" alt="">
             </div>
