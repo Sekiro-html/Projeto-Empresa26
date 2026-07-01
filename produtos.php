@@ -11,7 +11,7 @@
     } //echo "conexão foi bem massa";
     mysqli_set_charset($conn, "utf8");
 
-    $codigo_produtos = 'SELECT produtos.Nome AS NomeProduto, categorias.Nome AS NomeCategoria,  produtos.Preco AS Preco FROM produtos 
+    $codigo_produtos = 'SELECT produtos.ProdutoID AS ProdutoID, produtos.Nome AS NomeProduto, categorias.Nome AS NomeCategoria,  produtos.Preco AS Preco, produtos.Peso AS Peso FROM produtos 
                         INNER JOIN categorias ON produtos.CategoriaID = categorias.CategoriaID';
     $SQL_Prod = mysqli_query($conn, $codigo_produtos);  
 ?>
@@ -29,10 +29,10 @@
         <?php while ($ResultSQL = mysqli_fetch_assoc($SQL_Prod)) { ?>
         <article class="ContainerProd">
             <h1 class="txt-nome"><?php echo $ResultSQL['NomeProduto'];?></h1>
-            <p class="txt-categoria"><?php echo $ResultSQL['NomeCategoria'];?></p>
-            
+            <p class="txt-info"><?php echo $ResultSQL['NomeCategoria'];?></p>
+            <span class="txt-KG"><?php echo $ResultSQL['Peso']?> KG</span>
             <span class="txt-price">R$ <?php echo number_format($ResultSQL['Preco'], 2, ",", ".");?></span>
-            <a href="produto-detalhe.php" class="anchorProd" id="removealinhamento"">Ver Detalhes</a>
+            <a href="produto-detalhe.php?id=<?php echo $ResultSQL['ProdutoID'];?>" class="anchorProd" id="removealinhamento"">Ver Detalhes</a>
         </article>
         <?php };?>
     </main>
