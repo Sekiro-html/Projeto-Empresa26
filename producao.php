@@ -47,8 +47,8 @@
                 <td class="table-data"><?php echo $SQL_Result['ProdutoNome'];?></td>
                 <td class="table-data"><?php echo $SQL_Result['NomeFuncionario'];?></td>
                 <td class="table-data"><?php echo $SQL_Result['ClienteNome'];?></td>
-                <td class="table-data"><?php echo $SQL_Result['DataProducao'];?></td>
-                <td class="table-data">R$ <?php echo $SQL_Result['DataEntrega'];?></td>
+                <td class="table-data"><?php echo date("d/m/Y", strtotime($SQL_Result['DataProducao']));?></td>
+                <td class="table-data"><?php if ($SQL_Result['DataEntrega'] != NULL) { echo date("d/m/Y", strtotime($SQL_Result['DataEntrega']));} else echo "Em Aberto";?></td>
             </tr>
             <?php }?>
         </table>    
