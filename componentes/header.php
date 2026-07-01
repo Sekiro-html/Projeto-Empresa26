@@ -2,16 +2,6 @@
     $pagina = basename($_SERVER['PHP_SELF']);
     include 'conexao.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="CSS/style.css">
-</head>
-<body>
     <header>
         <nav>
             <div id="navbar-superior">
@@ -33,5 +23,3 @@
             </ul>
         </nav>
     </header>
-</body>
-</html>

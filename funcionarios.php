@@ -11,7 +11,8 @@
     } //echo "conexão foi bem massa";
     mysqli_set_charset($conn, "utf8");
 
-    $SQL = "SELECT funcionarios.Nome, funcionarios.Email, cargos.Nome, setor.Nome, funcionarios.Salario, funcionarios.Ramal 
+    $SQL = "SELECT funcionarios.Nome AS NomeFuncionario, funcionarios.Email, cargos.Nome AS NomeCargo, setor.Nome AS NomeSetor, 
+    funcionarios.Salario, funcionarios.Ramal
     FROM funcionarios 
     INNER JOIN cargos ON funcionarios.CargoID = cargos.CargoID
     INNER JOIN setor ON funcionarios.SetorID = funcionarios.SetorID;";
@@ -25,21 +26,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
     <?php include 'componentes/header.php'?>
     <main class="container">
-        <table>
+        <table id="tablefuncionarios" border="1">
+            <thead>
+                <tr>
+                    <th class="titulo-table">Funcionario</th>
+                    <th class="titulo-table">E-mail</th>
+                    <th class="titulo-table">Ramal</th>
+                    <th class="titulo-table">Cargo</th>
+                    <th class="titulo-table">Setor</th>
+                    <th class="titulo-table">Salário</th>
+                </tr>
+            </thead>
+            <?php while ($SQL_Result = mysqli_fetch_assoc($resultado)) {?>
             <tr>
-                <td>Funcionario</td>
-                <td>E-mail</td>
-                <td>Ramal</td>
-                <td>Cargo</td>
-                <td>Setor</td>
-                <td>Salário</td>
+                <td class="table-data"><?php echo $SQL_Result['NomeFuncionario'];?></td>
+                <td class="table-data"><?php echo $SQL_Result['Email'];?></td>
+                <td class="table-data"><?php echo $SQL_Result['Ramal'];?></td>
+                <td class="table-data"><?php echo $SQL_Result['NomeCargo'];?></td>
+                <td class="table-data"><?php echo $SQL_Result['NomeSetor'];?></td>
+                <td class="table-data">R$ <?php echo $SQL_Result['Salario'];?></td>
             </tr>
-            <?php while($SQL_Result = mysqli_fetch_assoc($resultado)) { ?>
-            <tr></tr>
             <?php }?>
         </table>    
     </main>
